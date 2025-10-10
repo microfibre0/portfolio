@@ -1,0 +1,22 @@
+<div class="d-flex justify-content-between border bg-secondary py-4">
+  <h3 class="ps-2">portfolio page</h3>
+  <span class="pe-4">
+    <a class="btn border">link</a>
+    <a class="btn border">link</a>
+    <a class="btn border">link</a>
+  </span>
+</div>
+
+<div class="row" data-controller="websites" >
+  <div class="border col-2 list-group list-group-flush p-0 overflow-y">
+    <% @websites.each do |website| %>
+      <a class="list-group-item list-group-item-action" data-url="<%= website.url %>" data-action="click->websites#show_website"><%= website.name %></a>
+    <% end %>
+  </div>
+  <div class="col-9 p-4 ms-5 ">
+    <div class="container border vh-80 p-0">
+      <iframe data-websites-target="iframe" src="" class="d-none w-100 h-100"></iframe>
+      <%= render "shared/default_iframe"%>
+    </div>
+  </div>
+</div>

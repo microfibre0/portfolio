@@ -1,0 +1,29 @@
+<div data-controller="gradient-maker" data-gradient-maker-target="background" class="vh-100 ">
+
+  <div class="d-flex flex-column align-items-center justify-content-between border rounded-2 position-fixed l-5 t-10 py-1 pxw-300 pxh-300 bg-blue d-none" data-gradient-maker-target="color_wheel_container">
+    <div>
+      <div class="d-flex gap-5 align-items-center">
+        <p class="mx-4"></p>
+        <p class="pt-1 text-white" data-gradient-maker-target="color_wheel_label">######</p>
+        <button class="pxh-20 pxw-50 bg-danger rounded-pill center-text text-white border-0 " data-action="click->gradient-maker#remove_color click->gradient-maker#display_gradient"><span>del</span></button>
+      </div>
+      <input class="pxw-250" type="color" data-gradient-maker-target="color_input"/>
+    </div>
+    <button class="rounded-pill border-0 bg-success" data-action="click->gradient-maker#Pick_color_val click->gradient-maker#display_gradient">enter</button>
+  </div>
+
+  <div class="container bg-blue rounded-2 border py-5 vw-50 position-relative t-60"  >
+      <div class="row px-5 overflow-y max-pxh-180" data-gradient-maker-target="colors">
+        <!--colors gened here-->
+
+      </div>
+      <button class="col-1 rounded-pill pxw-100 pxh-50 center-text p-0 broder-none position-absolute l-40" data-action="click->gradient-maker#add_color"><span>add color</span></button>
+
+    <div class="mx-auto bg-white border px-1 py-2 w-50" data-gradient-maker-target="color_css">
+      text
+    </div>
+
+  </div>
+
+
+</div>
