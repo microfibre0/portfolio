@@ -1,6 +1,33 @@
 $colors: (
+  "dark-blue-a": rgba(11, 12, 16, 0.75),
+  "blue": #0547b9,
+  "dark-blue": #0B0C10,
+  "light-blue": #4A90E2,
+  "green": #7ED321,
+  "dark-green": #417505,
+  "light-green": #B8E986,
+  "red": #D0021B,
+  "dark-red": #8B0000,
+  "light-red": #FF6F61,
+  "yellow": #F5A623,
+  "dark-yellow": #C68600,
+  "light-yellow": #FFF5E1,
+  "purple": #9013FE,
+  "dark-purple": #4B0082,
+  "light-purple": #D8BFD8,
+  "orange": #F5A623,
+  "dark-orange": #C46200,
+  "light-orange": #FFDAB9,
+  "pink": #FF69B4,
+  "dark-pink": #C71585,
+  "light-pink": #FFB6C1,
+  "gray": #9B9B9B,
+  "dark-gray": #4A4A4A,
+  "light-gray": #D3D3D3
 );
 
-.bg-blue {
-  background-color: #1A2332;
+@each $name, $color in $colors {
+  .bg-#{$name} {
+    background-color : #{$color};
+  }
 }

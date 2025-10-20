@@ -1,6 +1,8 @@
 import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="gradient-maker"
 export default class extends Controller {
+  colorCount = 0;
+
   static targets = [
     "background",
     "singular_color",
@@ -10,27 +12,27 @@ export default class extends Controller {
     "color_code",
     "color_css",
     "color_input",
-    "colors"
+    "colors",
+    "range_input",
+    "deg_display"
   ];
-
 
   connect() {
     console.log("CONNECTED")
   };
 
   add_color() {
-    let color_count = this.colorsTarget.dataset.colorcount || "1"; //get or set index of color
-    this.colorsTarget.dataset.colorcount = String(Number(color_count) + 1); //increment index befor adding new color
-
-    this.colorsTarget.innerHTML += `        <div class=" col-3 d-flex flex-column align-items-center" data-gradient-maker-target="singular_color" data-index="${color_count}" data-hex="#ffffff">
-          <button class="border rounded-pill pxh-50" data-gradient-maker-target="color_button" data-action="click->gradient-maker#choose_colorX">color ${color_count}</button>
+    this.colorCount += 1;
+    this.colorsTarget.innerHTML += `        <div class=" col-3 d-flex flex-column align-items-center" data-gradient-maker-target="singular_color" data-index="${this.colorCount}" data-hex="#ffffff">
+          <button class="border rounded-pill pxh-50" data-gradient-maker-target="color_button" data-action="click->gradient-maker#choose_colorX">color ${this.colorCount}</button>
           <p class="text-white "data-gradient-maker-target="color_code">#ffffff</p>
         </div>`;
+
+    this.display_gradient();
   };
 
   remove_color() { //remove color being targeted
     let target = this.color_wheel_containerTarget.dataset.targeting;
-    let color_count = this.colorsTarget.dataset.colorcount;
     let deleted = false;
     this.singular_colorTargets.forEach((element) => {
       if (deleted) {
@@ -40,10 +42,10 @@ export default class extends Controller {
         element.remove()
         deleted = true;
         this.color_wheel_containerTarget.classList.add("d-none");
-        this.colorsTarget.dataset.colorcount = String(Number(color_count) - 1);
+        this.colorCount -= 1;
       };
     });
-
+    this.display_gradient();
   };
 
   choose_colorX(event) { //open color wheel and target color to be edited
@@ -68,21 +70,34 @@ export default class extends Controller {
         element.firstElementChild.style.backgroundColor = colorValue;
       };
     });
+
   };
 
   display_gradient() {
+    if (this.colorCount >= 0) {
+      this.backgroundTarget.style.background = `#ffffff`;
+      this.color_cssTarget.innerHTML = ``;
+    }
+
     this.backgroundTarget.style.background = this.generate_gradient();
     this.color_cssTarget.innerHTML = `background: ${this.generate_gradient()}`;
   }
 
   generate_gradient() {
-    let gradient_css = "linear-gradient(90deg";
+    let gradient_css = `linear-gradient(${this.range_inputTarget.value}deg`;
+    console.log(this.range_inputTarget.value)
     this.singular_colorTargets.forEach((element) => {
       gradient_css += `, ${element.dataset.hex}`;
     });
     gradient_css += ")";
 
     return gradient_css
+  }
+
+  displayDeg() {
+    console.log("KEYUP");
+    this.deg_displayTarget.innerHTML = `${this.range_inputTarget.value}deg`;
+    this.display_gradient();
   }
 
 };
