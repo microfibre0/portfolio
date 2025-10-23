@@ -9,14 +9,19 @@
 
 <div class="row" data-controller="websites" >
   <div class="border col-2 list-group list-group-flush p-0 overflow-y">
+    <%= link_to "gradient_maker", gradient_maker_path,
+     class: "list-group-item list-group-item-action" ,
+    data: {turbo_frame: :projects}%>
+    <!-- websites url list -->
     <% @websites.each do |website| %>
       <a class="list-group-item list-group-item-action" data-url="<%= website.url %>" data-action="click->websites#show_website"><%= website.name %></a>
     <% end %>
   </div>
   <div class="col-9 p-4 ms-5 ">
     <div class="container border vh-80 p-0">
-      <iframe data-websites-target="iframe" src="" class="d-none w-100 h-100"></iframe>
-      <%= render "shared/default_iframe"%>
+      <%= turbo_frame_tag :projects do %>
+
+      <% end %>
     </div>
   </div>
 </div>
