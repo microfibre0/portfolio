@@ -57,4 +57,33 @@ $scale: (
     right: #{$int}vw
   }
 
+  @media (min-width: 1200px) {
+    .lg-vh-#{$name} {
+      height: #{$int}vh
+    }
+
+    .lg-vw-#{$name} {
+      width: #{$int}vw
+    }
+  }
+
+  @media (max-width: 1199px) {
+    .md-vh-#{$name} {
+      height: #{$int}vh
+    }
+
+    .md-vw-#{$name} {
+      width: #{$int}vw
+    }
+  }
+
+  @media (max-width: 767px) {
+    .sm-vh-#{$name} {
+      height: #{$int}vh
+    }
+
+    .sm-vw-#{$name} {
+      width: #{$int}vw
+    }
+  }
 }

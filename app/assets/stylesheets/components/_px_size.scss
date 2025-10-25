@@ -46,4 +46,42 @@ $scale: (
   .max-pxw-#{$name} {
     max-width: #{$int}px;
   }
+
+  @media (min-width: 1200px) {
+    .lg-pxh-#{$name} {
+      height: #{$int}px;
+    }
+
+    .lg-pxw-#{$name} {
+      width: #{$int}px;
+    }
+
+    .lg-max-pxh-#{$name} {
+      max-height: #{$int}px;
+    }
+
+    .lg-max-pxw-#{$name} {
+      max-width: #{$int}px;
+    }
+  }
+
+  @media (max-width: 1199px) {
+    .md-pxh-#{$name} {
+      height: #{$int}px;
+    }
+
+    .md-pxw-#{$name} {
+      width: #{$int}px;
+    }
+
+    .md-max-pxh-#{$name} {
+      max-height: #{$int}px;
+    }
+
+    .md-max-pxw-#{$name} {
+      max-width: #{$int}px;
+    }
+  }
+
+
 }

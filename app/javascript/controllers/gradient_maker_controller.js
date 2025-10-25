@@ -24,7 +24,7 @@ export default class extends Controller {
   add_color() {
     this.colorCount += 1;
     this.colorsTarget.innerHTML += `        <div class=" col-3 d-flex flex-column align-items-center" data-gradient-maker-target="singular_color" data-index="${this.colorCount}" data-hex="#ffffff">
-          <button class="border rounded-pill pxh-50" data-gradient-maker-target="color_button" data-action="click->gradient-maker#choose_colorX">color ${this.colorCount}</button>
+          <button class="border rounded-pill pxh-40" data-gradient-maker-target="color_button" data-action="click->gradient-maker#choose_colorX">color ${this.colorCount}</button>
           <p class="text-white "data-gradient-maker-target="color_code">#ffffff</p>
         </div>`;
 
