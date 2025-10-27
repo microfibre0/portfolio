@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root to: 'websites#index'
   get 'gradient_maker', to: 'websites#gradient_maker'
+  get 'leaving_site', to: 'websites#leaving_site'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
