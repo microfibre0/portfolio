@@ -1,0 +1,24 @@
+.homePage-ListItem {
+  padding: 0.75rem 1.25rem;
+  color: #dfdfdf;
+  text-decoration: none;
+  background: linear-gradient(145deg, rgb(100, 100, 100), rgb(77, 77, 77));
+  border-top: 1px solid rgb(180, 180, 180);
+  border-left: 1px solid rgb(180, 180, 180);
+  border-right: 1px solid rgb(34, 34, 34);
+  border-bottom: 1px solid rgb(34, 34, 34);
+  display: block;
+}
+
+.homePage-ListItem-link {
+  background: linear-gradient(145deg, rgb(95, 118, 151), rgb(60, 64, 102));
+
+}
+
+.homePage-ListItem:hover {
+  background: linear-gradient(145deg, rgb(49, 49, 49), rgb(31, 31, 31));
+}
+
+.homePage-ListItemBg {
+  background-color: rgb(108, 117, 125);
+}
