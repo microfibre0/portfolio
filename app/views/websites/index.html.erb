@@ -1,28 +1,29 @@
 <div class="d-flex justify-content-between border bg-secondary py-4">
-  <h3 class="ps-2">portfolio page</h3>
-  <span class="pe-4">
-    <a class="btn border">link</a>
-    <a class="btn border">link</a>
-    <a class="btn border">link</a>
-  </span>
+  <h3 class="ms-4 text-white"> My Projects </h3>
+  <h3 class="me-4 text-white"> Eitan Hoyte (software developer) </h3>
+  <div></div>
 </div>
 
 <div class="row" data-controller="websites" >
-  <div class="border col-2 list-group list-group-flush p-0 overflow-y">
+  <div class="border col-2 p-0 overflow-y homePage-ListItemBg">
+    <%= link_to "welcome", root_path,
+     class: "homePage-ListItem" ,
+     data: {turbo_frame: :projects}%>
+
     <%= link_to "gradient_maker", gradient_maker_path,
-     class: "list-group-item list-group-item-action" ,
-    data: {turbo_frame: :projects}%>
+     class: "homePage-ListItem" ,
+     data: {turbo_frame: :projects}%>
     <!-- websites url list -->
     <% @websites.each do |website| %>
       <%= link_to website.name, leaving_site_path(url: website.url),
-       class: "list-group-item list-group-item-action",
+       class: "homePage-ListItem homePage-ListItem-link",
        data: {turbo_frame: :projects}%>
     <% end %>
   </div>
   <div class="col-9 p-4 ms-5 ">
     <div class="container border vh-80 p-0">
       <%= turbo_frame_tag :projects do %>
-
+        <%= render "shared/default"%>
       <% end %>
     </div>
   </div>

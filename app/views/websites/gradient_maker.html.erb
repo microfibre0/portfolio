@@ -1,5 +1,5 @@
 <%= turbo_frame_tag :projects do %>
-<div data-controller="gradient-maker" data-gradient-maker-target="background" class="h-100">
+<div data-controller="gradient-maker" data-gradient-maker-target="background" class="h-100 bg-light">
   <!-- color wheel -->
   <div class="d-flex flex-column align-items-center justify-content-between border rounded-2 position-absolute  py-1 pxw-200 pxh-200 bg-dark-blue-a d-none" data-gradient-maker-target="color_wheel_container">
     <div class="d-flex flex-column gap-2 align-items-center">
@@ -25,7 +25,7 @@
       </div>
       <button class="col-1 rounded-pill pxw-100 pxh-40 center-text p-0 border-0 position-absolute" data-action="click->gradient-maker#add_color"><span>add color</span></button>
 
-    <div class="mx-auto bg-white border px-1 py-2 w-50 overflow-y max-pxh-60" data-gradient-maker-target="color_css">
+    <div class="mx-auto bg-white border px-1 py-2 w-75 me-3 overflow-y max-pxh-60" data-gradient-maker-target="color_css">
       text
     </div>
 
