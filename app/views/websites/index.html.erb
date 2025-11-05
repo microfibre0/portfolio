@@ -14,11 +14,13 @@
      class: "homePage-ListItem" ,
      data: {turbo_frame: :projects}%>
     <!-- websites url list -->
-    <% @websites.each do |website| %>
-      <%= link_to website.name, leaving_site_path(url: website.url),
-       class: "homePage-ListItem homePage-ListItem-link",
-       data: {turbo_frame: :projects}%>
-    <% end %>
+    <%= link_to "my linked in", leaving_site_path(url: "https://www.linkedin.com/in/eitan-hoyte-546021297/"),
+     class: "homePage-ListItem homePage-ListItem-link",
+     data: {turbo_frame: :projects}%>
+
+     <%= link_to "my git hub", leaving_site_path(url: "https://github.com/microfibre0"),
+     class: "homePage-ListItem homePage-ListItem-link",
+     data: {turbo_frame: :projects}%>
   </div>
   <div class="col-9 p-4 ms-5 ">
     <div class="container border vh-80 p-0">
