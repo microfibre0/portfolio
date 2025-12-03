@@ -1,0 +1,29 @@
+@keyframes sliderUp {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(0, -504.5px);
+  }
+}
+
+@keyframes sliderDown {
+  0% {
+    transform: translate(0, -504.5px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.vertical-slider-up {
+  animation: sliderUp 5s linear infinite;
+}
+
+.vertical-slider-down {
+  animation: sliderDown 5s linear infinite;
+}
+
+/*532px*/

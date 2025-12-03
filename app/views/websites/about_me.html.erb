@@ -1,41 +1,11 @@
-<div class="h-100 w-100 bg-light overflow-hidden d-flex justify-content-evenly">
-
-  <div class=" d-flex flex-column gap-2 vertical-slider-up">
-    <%= image_tag "cleaned HTML logo", class: "pxw-100 pxh-100"%>
-    <%= image_tag "cleaned CSS logo", class: "pxw-100 pxh-100"%>
-    <%= image_tag "cleaned JS logo", class: "pxw-100 pxh-100"%>
-    <%= image_tag "Ruby_on_Rails-Logo", class: "pxw-100 pxh-100"%>
-    <%= image_tag "PostgreSQL_logo", class: "pxw-100 pxh-100"%>
-    <%= image_tag "cleaned HTML logo", class: "pxw-100 pxh-100"%>
-    <%= image_tag "cleaned CSS logo", class: "pxw-100 pxh-100"%>
-    <%= image_tag "cleaned JS logo", class: "pxw-100 pxh-100"%>
-    <%= image_tag "Ruby_on_Rails-Logo", class: "pxw-100 pxh-100"%>
-    <%= image_tag "PostgreSQL_logo", class: "pxw-100 pxh-100"%>
-  </div>
-
-    <h1 class=" "> Eitan Software/web dev</h1>
-
-  <div class=" d-flex flex-column gap-2 vertical-slider-down ">
-    <%= image_tag "cleaned HTML logo", class: "pxw-100 pxh-100"%>
-    <%= image_tag "cleaned CSS logo", class: "pxw-100 pxh-100"%>
-    <%= image_tag "cleaned JS logo", class: "pxw-100 pxh-100"%>
-    <%= image_tag "Ruby_on_Rails-Logo", class: "pxw-100 pxh-100"%>
-    <%= image_tag "PostgreSQL_logo", class: "pxw-100 pxh-100"%>
-    <%= image_tag "cleaned HTML logo", class: "pxw-100 pxh-100"%>
-    <%= image_tag "cleaned CSS logo", class: "pxw-100 pxh-100"%>
-    <%= image_tag "cleaned JS logo", class: "pxw-100 pxh-100"%>
-    <%= image_tag "Ruby_on_Rails-Logo", class: "pxw-100 pxh-100"%>
-    <%= image_tag "PostgreSQL_logo", class: "pxw-100 pxh-100"%>
-  </div>
-</div>
-<!--
+<%= turbo_frame_tag :projects do %>
   <h2 class="text-center pt-4"> Welcome to my portfolio </h2>
 
   <h6 class="text-center pt-2">This website was made with ruby on rails</h6>
 
   <p class="px-5">
     Welcome, I'm a software developer that likes to make responsive, robust and practically usfull projects.
-    My wishes is to become a skilled software developer of many technologies, and deliver high quality solutions,
+    My wish is to become a skilled software developer of many technologies, and deliver high quality solutions,
     the reason for this is that I want to make software that helps people in their daily lives, and make their lives easier,
     for I believe this is the proper purpose of software as apposed to solely money making.
   </p>
@@ -54,11 +24,12 @@
       </div>
   </div>
 
-</div>
--->
+
+
 <!--
 https://www.pngfind.com/mpng/hRmJmoh_scss-logo-hd-png-download/
 https://www.writesoftwarewell.com/content/images/2023/02/hotwire-1.png
 https://www.logo.wine/logo/Ruby_on_Rails
 https://wiki.postgresql.org/wiki/File:PostgreSQL_logo.3colors.540x557.png#filelinks
 -->
+<%end%>

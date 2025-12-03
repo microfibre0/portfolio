@@ -10,4 +10,9 @@ class WebsitesController < ApplicationController
   def leaving_site
     @url = params[:url]
   end
+
+  def about_me
+
+  end
+
 end

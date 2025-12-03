@@ -4,9 +4,13 @@
   <div></div>
 </div>
 
-<div class="row" data-controller="websites" >
-  <div class="border col-2 p-0 overflow-y homePage-ListItemBg">
+<div class="row vh-87" data-controller="websites" >
+  <div class="border vh-90 col-2 p-0 overflow-y homePage-ListItemBg">
     <%= link_to "welcome", root_path,
+     class: "homePage-ListItem" ,
+     data: {turbo_frame: :projects}%>
+
+    <%= link_to "about me", about_me_path,
      class: "homePage-ListItem" ,
      data: {turbo_frame: :projects}%>
 
@@ -21,6 +25,8 @@
      <%= link_to "my git hub", leaving_site_path(url: "https://github.com/microfibre0"),
      class: "homePage-ListItem homePage-ListItem-link",
      data: {turbo_frame: :projects}%>
+
+
   </div>
   <div class="col-9 p-4 ms-5 ">
     <div class="container border vh-80 p-0">
