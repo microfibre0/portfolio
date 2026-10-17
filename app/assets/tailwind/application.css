@@ -11,7 +11,7 @@
   --nav-link-border-light: #b4b4b4;
   --nav-link-border-dark: #222222;
   --nav-link-start: #646464;
-  --nav-link-end: #5c5151;
+  --nav-link-end: #4d4d4d;
   --nav-link-hover-start: #313131;
   --nav-link-hover-end: #1f1f1f;
   --external-link-start: #5f7697;
@@ -50,7 +50,7 @@ body:has(> turbo-frame#projects)>turbo-frame#projects {
 
 .website-nav-link {
   border-color: var(--nav-link-border-light) var(--nav-link-border-dark) var(--nav-link-border-dark) var(--nav-link-border-light);
-  background-color: var(--nav-link-end);
+  background: linear-gradient(145deg, var(--nav-link-start), var(--nav-link-end));
   color: var(--nav-link-text);
 }
 
