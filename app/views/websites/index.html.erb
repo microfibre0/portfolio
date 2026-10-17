@@ -1,38 +1,39 @@
-<div class="d-flex justify-content-between border bg-secondary py-4">
-  <h3 class="ms-4 text-white"> My Projects </h3>
-  <h3 class="me-4 text-white"> </h3>
-  <div></div>
-</div>
-
-<div class="row vh-87" data-controller="websites" >
-  <div class="border vh-90 col-2 p-0 overflow-y homePage-ListItemBg">
-    <%= link_to "welcome", root_path,
-     class: "homePage-ListItem" ,
-     data: {turbo_frame: :projects}%>
-
-    <%= link_to "about me", about_me_path,
-     class: "homePage-ListItem" ,
-     data: {turbo_frame: :projects}%>
-
-    <%= link_to "gradient_maker", gradient_maker_path,
-     class: "homePage-ListItem" ,
-     data: {turbo_frame: :projects}%>
-    <!-- websites url list -->
-    <%= link_to "my linked in", leaving_site_path(url: "https://www.linkedin.com/in/eitan-hoyte-546021297/"),
-     class: "homePage-ListItem homePage-ListItem-link",
-     data: {turbo_frame: :projects}%>
-
-     <%= link_to "my git hub", leaving_site_path(url: "https://github.com/microfibre0"),
-     class: "homePage-ListItem homePage-ListItem-link",
-     data: {turbo_frame: :projects}%>
-
-
+<div class="homePage">
+  <div class="homePage-header d-flex justify-content-between border bg-secondary py-4">
+    <h3 class="ms-4 text-white"> My Projects </h3>
+    <h3 class="me-4 text-white"> </h3>
+    <div></div>
   </div>
-  <div class="col-9 p-4 ms-5 ">
-    <div class="container border vh-80 p-0">
-      <%= turbo_frame_tag :projects do %>
-        <%= render "shared/default"%>
-      <% end %>
+
+  <div class="row g-0 homePage-layout" data-controller="websites">
+    <div class="border col-2 p-0 overflow-y homePage-sidebar homePage-ListItemBg">
+      <%= link_to "welcome", root_path,
+       class: "homePage-ListItem" ,
+       data: {turbo_frame: :projects}%>
+
+      <%= link_to "about me", about_me_path,
+       class: "homePage-ListItem" ,
+       data: {turbo_frame: :projects}%>
+
+      <%= link_to "gradient_maker", gradient_maker_path,
+       class: "homePage-ListItem" ,
+       data: {turbo_frame: :projects}%>
+      <!-- websites url list -->
+      <%= link_to "my linked in", leaving_site_path(url: "https://www.linkedin.com/in/eitan-hoyte-546021297/"),
+       class: "homePage-ListItem homePage-ListItem-link",
+       data: {turbo_frame: :projects}%>
+
+      <%= link_to "my git hub", leaving_site_path(url: "https://github.com/microfibre0"),
+       class: "homePage-ListItem homePage-ListItem-link",
+       data: {turbo_frame: :projects}%>
+    </div>
+
+    <div class="col p-3 homePage-main">
+      <div class="border h-100 w-100 p-0 homePage-projects">
+        <%= turbo_frame_tag :projects do %>
+          <%= render "shared/default"%>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
