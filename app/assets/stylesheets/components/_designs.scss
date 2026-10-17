@@ -22,3 +22,40 @@
 .homePage-ListItemBg {
   background-color: rgb(108, 117, 125);
 }
+
+.homePage {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.homePage-header {
+  flex: 0 0 auto;
+}
+
+.homePage-layout {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.homePage-sidebar,
+.homePage-main,
+.homePage-projects {
+  min-height: 0;
+}
+
+.homePage-main,
+.homePage-projects {
+  min-width: 0;
+}
+
+.homePage-projects {
+  overflow: auto;
+}
+
+.homePage-projects > turbo-frame {
+  display: block;
+  min-height: 100%;
+}
