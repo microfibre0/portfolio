@@ -23,8 +23,8 @@ export default class extends Controller {
 
   add_color() {
     this.colorCount += 1;
-    this.colorsTarget.innerHTML += `        <div class=" col-3 d-flex flex-column align-items-center" data-gradient-maker-target="singular_color" data-index="${this.colorCount}" data-hex="#ffffff">
-          <button class="border rounded-pill pxh-40" data-gradient-maker-target="color_button" data-action="click->gradient-maker#choose_colorX">color ${this.colorCount}</button>
+    this.colorsTarget.innerHTML += `        <div class="flex w-full flex-col items-center" data-gradient-maker-target="singular_color" data-index="${this.colorCount}" data-hex="#ffffff">
+          <button class="h-10 rounded-full border border-[#dee2e6]" data-gradient-maker-target="color_button" data-action="click->gradient-maker#choose_colorX">color ${this.colorCount}</button>
           <p class="text-white "data-gradient-maker-target="color_code">#ffffff</p>
         </div>`;
 
@@ -41,7 +41,7 @@ export default class extends Controller {
       } else if (element.dataset.index == target) {
         element.remove()
         deleted = true;
-        this.color_wheel_containerTarget.classList.add("d-none");
+        this.color_wheel_containerTarget.classList.add("hidden");
         this.colorCount -= 1;
       };
     });
@@ -56,7 +56,7 @@ export default class extends Controller {
     this.color_wheel_labelTarget.innerHTML = `color ${index}`; // display color being targeted
     this.color_inputTarget.value = color;
 
-    this.color_wheel_containerTarget.classList.remove("d-none");
+    this.color_wheel_containerTarget.classList.remove("hidden");
   };
 
   Pick_color_val() { //

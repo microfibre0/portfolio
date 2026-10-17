@@ -1,31 +1,31 @@
-<%= turbo_frame_tag :projects do %>
-<div data-controller="gradient-maker" data-gradient-maker-target="background" class="h-100 bg-light">
+<%= turbo_frame_tag :projects, class: "block h-full" do %>
+<div data-controller="gradient-maker" data-gradient-maker-target="background" class="relative h-full bg-[#f8f9fa]">
   <!-- color wheel -->
-  <div class="d-flex flex-column align-items-center justify-content-between border rounded-2 position-absolute  py-1 pxw-200 pxh-200 bg-dark-blue-a d-none" data-gradient-maker-target="color_wheel_container">
-    <div class="d-flex flex-column gap-2 align-items-center">
-      <div class="d-flex gap-4 align-items-center">
-        <p class="mx-4 text-white"></p>
-        <p class="pt-1 text-white m-0" data-gradient-maker-target="color_wheel_label">######</p>
-        <button class="pxh-20 pxw-50 bg-danger rounded-pill center-text text-white border-0 " data-action="click->gradient-maker#remove_color click->gradient-maker#display_gradient"><span>del</span></button>
+  <div class="absolute hidden flex h-[200px] w-[200px] flex-col items-center justify-between rounded-md border border-[#dee2e6] bg-[rgba(11,12,16,0.75)] py-1" data-gradient-maker-target="color_wheel_container">
+    <div class="flex flex-col items-center gap-2">
+      <div class="flex items-center gap-6">
+        <p class="mx-6 text-white"></p>
+        <p class="m-0 pt-1 text-white" data-gradient-maker-target="color_wheel_label">######</p>
+        <button class="flex h-5 w-[50px] items-center justify-center rounded-full border-0 bg-[#dc3545] text-white" data-action="click->gradient-maker#remove_color click->gradient-maker#display_gradient"><span>del</span></button>
       </div>
-      <input class="pxw-180" type="color" data-gradient-maker-target="color_input"/>
-      <input class="pxw-180" type="range" min="1" max="360" data-gradient-maker-target="range_input" data-action="click->gradient-maker#displayDeg"/>
+      <input class="w-[180px]" type="color" data-gradient-maker-target="color_input"/>
+      <input class="w-[180px]" type="range" min="1" max="360" data-gradient-maker-target="range_input" data-action="click->gradient-maker#displayDeg"/>
       <p class="text-white" data-gradient-maker-target="deg_display">180deg</p>
     </div>
-    <button class="rounded-pill border-0 bg-success" data-action="click->gradient-maker#Pick_color_val click->gradient-maker#display_gradient">enter</button>
+    <button class="rounded-full border-0 bg-[#198754]" data-action="click->gradient-maker#Pick_color_val click->gradient-maker#display_gradient">enter</button>
   </div>
   <!-- end color wheel -->
 
 
   <!-- color container -->
-  <div class="container bg-dark-blue-a rounded-2 border py-4 lg-vw-45 md-vw-65 position-relative t-45"  >
-      <div class="row px-5 overflow-y max-pxh-90" data-gradient-maker-target="colors">
+  <div class="absolute bottom-4 left-1/2 w-[65vw] -translate-x-1/2 rounded-md border border-[#dee2e6] bg-[rgba(11,12,16,0.75)] py-6 min-[1200px]:w-[45vw]">
+      <div class="grid max-h-[90px] grid-cols-4 overflow-y-auto px-12" data-gradient-maker-target="colors">
         <!--colors gened here-->
 
       </div>
-      <button class="col-1 rounded-pill pxw-100 pxh-40 center-text p-0 border-0 position-absolute" data-action="click->gradient-maker#add_color"><span>add color</span></button>
+      <button class="absolute flex h-10 w-[100px] items-center justify-center rounded-full border-0 p-0" data-action="click->gradient-maker#add_color"><span>add color</span></button>
 
-    <div class="mx-auto bg-white border px-1 py-2 w-75 me-3 overflow-y max-pxh-60" data-gradient-maker-target="color_css">
+    <div class="mx-auto mr-4 max-h-[60px] w-3/4 overflow-y-auto border border-[#dee2e6] bg-white px-1 py-2" data-gradient-maker-target="color_css">
       text
     </div>
 

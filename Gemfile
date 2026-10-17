@@ -3,9 +3,6 @@ source "https://rubygems.org"
 ruby "3.3.5"
 
 # added gems
-gem "sassc-rails"
-gem "bootstrap"
-gem "font-awesome-sass"
 
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
@@ -71,3 +68,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "tailwindcss-rails", "~> 4.6"
+
+gem "sassc", "~> 2.4"

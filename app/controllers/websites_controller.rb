@@ -1,6 +1,5 @@
 class WebsitesController < ApplicationController
   def index
-
   end
 
   def gradient_maker

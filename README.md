@@ -1,24 +1,11 @@
-# README
+# Portfolio
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Development
 
-Things you may want to cover:
+Install dependencies and prepare the database with `bin/setup`, then run the app
+with `bin/dev`. The development command starts Rails and the Tailwind CSS
+watcher together.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Tailwind source styles live in `app/assets/tailwind/application.css`. The
+compiled stylesheet is generated under `app/assets/builds` and should not be
+edited directly.

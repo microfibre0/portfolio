@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+:root {
+  --page-background: #f8f9fa;
+  --page-text: #000000;
+  --page-border: #dee2e6;
+  --header-background: #6c757d;
+  --header-text: #ffffff;
+  --nav-background: #6c757d;
+  --nav-link-text: #dfdfdf;
+  --nav-link-border-light: #b4b4b4;
+  --nav-link-border-dark: #222222;
+  --nav-link-start: #646464;
+  --nav-link-end: #5c5151;
+  --nav-link-hover-start: #313131;
+  --nav-link-hover-end: #1f1f1f;
+  --external-link-start: #5f7697;
+  --external-link-end: #3c4066;
+}
+
+body:has(> turbo-frame#projects)>turbo-frame#projects {
+  height: 100dvh;
+}
+
+.website-page {
+  color: var(--page-text);
+}
+
+.website-header {
+  border-color: var(--page-border);
+  background-color: var(--header-background);
+}
+
+.website-header-title {
+  color: var(--header-text);
+}
+
+.website-nav {
+  border-color: var(--page-border);
+  background-color: var(--nav-background);
+}
+
+.website-content-frame {
+  border-color: var(--page-border);
+}
+
+.website-welcome {
+  background-color: var(--page-background);
+}
+
+.website-nav-link {
+  border-color: var(--nav-link-border-light) var(--nav-link-border-dark) var(--nav-link-border-dark) var(--nav-link-border-light);
+  background-color: var(--nav-link-end);
+  color: var(--nav-link-text);
+}
+
+.website-nav-link:hover {
+  background: linear-gradient(145deg, var(--nav-link-hover-start), var(--nav-link-hover-end));
+}
+
+.website-nav-link--external {
+  background: linear-gradient(145deg, var(--external-link-start), var(--external-link-end));
+}
